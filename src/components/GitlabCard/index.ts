@@ -1,0 +1,1 @@
+export { GitlabCard } from './GitlabCard';
