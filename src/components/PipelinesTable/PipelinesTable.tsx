@@ -45,7 +45,7 @@ export const DenseTable = ({ pipelines }: DenseTableProps) => {
     { title: 'Commit Message', field: 'message' },
   ];
 
-  const data = pipelines.map(pipeline => {
+  const data = pipelines?.map(pipeline => {
     return {
       avatar: (
         <img
@@ -58,13 +58,13 @@ export const DenseTable = ({ pipelines }: DenseTableProps) => {
       status: pipeline.status,
       id: pipeline.id,
       message: pipeline.commit?.title,
-      finished_at: pipeline?.finished_at,
+      finished_at: pipeline.finished_at,
     };
   });
 
   return (
     <Table
-      title="Tıkla Gelsin Client Pipelines"
+      title="Pipelines"
       options={{ search: false, paging: false }}
       columns={columns}
       data={data}
@@ -73,13 +73,9 @@ export const DenseTable = ({ pipelines }: DenseTableProps) => {
 };
 
 export const PipelinesTable = (props: any) => {
-  console.log("PipelinesTableProps", props);
-
-
-
   if (props?.loading) {
     return <Progress />;
-  } else if (props.error) {
+  } else if (props?.error) {
     return <Alert severity="error">{props?.error?.message}</Alert>;
   }
 
