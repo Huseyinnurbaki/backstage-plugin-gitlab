@@ -15,6 +15,8 @@ This method of serving the plugin provides quicker iteration speed and a faster 
 It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
 
 
+---
+```
 yarn clean
 yarn install
 yarn tsc
@@ -23,3 +25,4 @@ yarn prepack
 yarn pack
 yarn postpack
 yarn publish
+```
