@@ -14,7 +14,6 @@ export const gitlabPlugin = createPlugin({
         discoveryApi,
         baseUrl: configApi.getOptionalString("gitlab.baseUrl"),
         accessToken: configApi.getString("gitlab.accessToken"),
-        projectId: configApi.getString("gitlab.projectId"),
       })
     })
   ],
