@@ -19,10 +19,10 @@ It is only meant for local development, and the setup for it can be found inside
 ```
 yarn clean
 yarn install
+yarn prepack
 yarn tsc
 yarn build
-yarn prepack
-yarn pack
 yarn postpack
+yarn pack
 yarn publish
 ```
