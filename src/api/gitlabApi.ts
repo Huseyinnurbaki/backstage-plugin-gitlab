@@ -6,7 +6,7 @@ export const GitlabApiRef = createApiRef<GitlabApi>({
 });
 
 export type GitlabApi = {
-    getPipelines(): Promise<any>;
+    getPipelines(projectID: string): Promise<any>;
     // getPipelines(): Promise<Pipelines | undefined>;
 };
 
