@@ -1,5 +1,6 @@
 import { DiscoveryApi } from "@backstage/core";
 import { GitlabApi } from "./gitlabApi";
+import { useProjectIDFromEntity } from '../useProjectIDFromEntity';
 
 
 
@@ -13,7 +14,6 @@ constructor({
   discoveryApi,
   baseUrl = "gitlab.com",
   accessToken = "123",
-  projectId = "123",
 }: {
   discoveryApi: DiscoveryApi;
   baseUrl?: string;
@@ -23,7 +23,7 @@ constructor({
   this.discoveryApi = discoveryApi;
   this.baseUrl = baseUrl;
   this.accessToken = accessToken;
-  this.projectId = projectId;
+  this.projectId = useProjectIDFromEntity();;
 }
 
 

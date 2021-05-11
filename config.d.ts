@@ -10,11 +10,6 @@ export interface Config {
      * @visibility frontend
      */
     accessToken: string;
-    /**
-     * Frontend root URL
-     * @visibility frontend
-     */
-    projectId: string;
 
   };
 }
