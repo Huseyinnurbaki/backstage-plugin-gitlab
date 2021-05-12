@@ -9,14 +9,16 @@ import {
 import { PipelinesTable } from '../PipelinesTable';
 import { useAsync } from 'react-use';
 import { GitlabApiRef } from '../../api';
+import { useProjectIDFromEntity } from './useProjectIDFromEntity';
 
 
 export const GitlabCard = () => {
   const gitlabApi = useApi(GitlabApiRef);
 
+  const projectID =  useProjectIDFromEntity();
 
   const { value, error, loading } = useAsync(
-    async () => gitlabApi.getPipelines(),
+    async () => gitlabApi.getPipelines(projectID),
     [gitlabApi],
   );
 

@@ -1,15 +1,11 @@
 import { DiscoveryApi } from "@backstage/core";
 import { GitlabApi } from "./gitlabApi";
-import { useProjectIDFromEntity } from '../useProjectIDFromEntity';
-
-
 
 
 export class GitlabClient implements GitlabApi {
   discoveryApi: DiscoveryApi;
   baseUrl: string;
   accessToken: string;
-  projectId: string;
 constructor({
   discoveryApi,
   baseUrl = "gitlab.com",
@@ -18,18 +14,16 @@ constructor({
   discoveryApi: DiscoveryApi;
   baseUrl?: string;
   accessToken?: string;
-  projectId?: string;
   }) {
   this.discoveryApi = discoveryApi;
   this.baseUrl = baseUrl;
   this.accessToken = accessToken;
-  this.projectId = useProjectIDFromEntity();;
 }
 
 
-  async getPipelines() {
+  async getPipelines(projectID: string) {
     
-    const path = `${this.baseUrl}/api/v4/projects/${this.projectId}/jobs`
+    const path = `${this.baseUrl}/api/v4/projects/${projectID}/jobs`
 
       const response = await fetch(path, {
         headers: {
