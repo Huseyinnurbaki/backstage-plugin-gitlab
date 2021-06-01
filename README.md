@@ -4,18 +4,45 @@
 
 Welcome to the gitlab plugin!
 
-_This plugin was created through the Backstage CLI_
 
-## Getting started
-
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/gitlab](http://localhost:3000/gitlab).
-
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+Lists jobs of given project.
+Currently supports single Gitlab host.
 
 
----
+# Quickstart
+
+
+```console
+$yarn install @hhaluk/backstage-plugin-gitlab
 ```
-./pack.sh
+
+## CONFIGURATION
+
+
+
+```yaml
+....
+gitlab:
+  baseUrl: <HOST>
+  accessToken: 
+    $include: <YOUR_TOKEN>
+....
 ```
+
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage
+  description: |
+    Backstage is an open-source developer portal that puts the developer experience first.
+  annotations:
+    gitlab/projectID: <YOUR_PROJECT_ID>
+spec:
+  type: library
+  owner: CNCF
+  lifecycle: experimental
+```
+
+
