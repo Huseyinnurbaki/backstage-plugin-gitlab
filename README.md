@@ -39,10 +39,7 @@ metadata:
     Backstage is an open-source developer portal that puts the developer experience first.
   annotations:
     gitlab/projectID: <YOUR_PROJECT_ID>
-spec:
-  type: library
-  owner: CNCF
-  lifecycle: experimental
+.....
 ```
 
 
