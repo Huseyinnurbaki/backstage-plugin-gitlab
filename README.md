@@ -17,12 +17,5 @@ It is only meant for local development, and the setup for it can be found inside
 
 ---
 ```
-yarn clean
-yarn install
-yarn prepack
-yarn tsc
-yarn build
-yarn postpack
-yarn pack
-yarn publish
+./pack.sh
 ```

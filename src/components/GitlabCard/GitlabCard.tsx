@@ -15,7 +15,8 @@ import { useProjectIDFromEntity } from './useProjectIDFromEntity';
 export const GitlabCard = () => {
   const gitlabApi = useApi(GitlabApiRef);
 
-  const projectID =  useProjectIDFromEntity();
+  const projectID = useProjectIDFromEntity();
+  
 
   const { value, error, loading } = useAsync(
     async () => gitlabApi.getPipelines(projectID),

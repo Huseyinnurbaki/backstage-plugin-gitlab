@@ -22,6 +22,9 @@ constructor({
 
 
   async getPipelines(projectID: string) {
+    if(!projectID) {
+      return []
+    };
     
     const path = `${this.baseUrl}/api/v4/projects/${projectID}/jobs`
 
